@@ -1,1 +1,13 @@
+import random
+n=random.randint(1,25)
+print("guess the number between 1 to 25")
+while True:
+  guess=int(input("enter the number: "))
 
+  if guess > n:
+   print("your selected number is high !!")
+  elif guess < n:
+   print("your selected number is low!!")
+  else:
+   print("congratulation you guess the number")
+   break
