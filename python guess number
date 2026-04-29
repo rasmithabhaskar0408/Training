@@ -1,3 +1,4 @@
+##################### guess the number
 import random
 n=random.randint(1,25) #choose range
 print("guess the number between 1 to 25") 
@@ -11,3 +12,26 @@ while True:
   else:
    print("congratulation you guess the number")
    break
+
+#########################scramble the words
+import random
+
+words = ["python","automation","pytest","guvi","javascript","java","selenium"]
+#choose one word
+word = random.choice(words)
+
+l= list(word) #assigning to l
+random.shuffle(l) #shuffles the letters
+scrambled_word = "".join(l) #join the shuffled letters
+
+print("Scrambled word:", scrambled_word) #given word
+
+# multiple tries until correct
+while True:
+    guess = input("Your guess: ").lower()  #user guess
+    
+    if guess == word:
+        print("🎉 Correct!")
+        break
+    else:
+        print("❌ Wrong! Try again.")
