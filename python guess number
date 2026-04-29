@@ -1,8 +1,8 @@
 import random
-n=random.randint(1,25)
-print("guess the number between 1 to 25")
+n=random.randint(1,25) #choose range
+print("guess the number between 1 to 25") 
 while True:
-  guess=int(input("enter the number: "))
+  guess=int(input("enter the number: ")) #user give input
 
   if guess > n:
    print("your selected number is high !!")
