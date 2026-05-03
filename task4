@@ -1,0 +1,124 @@
+# odd & even
+list=[10,501,22,37,100,999,87,351] #given list
+even=[] # declaring empty list
+odd=[] # declairing empty list
+for n in list:
+  if  n%2 == 0 :
+    even.append(n) #added even number in even list usin append
+  
+  else :
+    odd.append(n) #added odd number in odd list
+ 
+
+print("even:",even) #printing out side the loop 
+print("odd:",odd)
+
+#///////////////////////////////////////////////////////////////////////
+
+#prime number list
+
+l= [10,501,22,37,100,999,87,351]
+primenum=[]
+
+for num in (l):
+  if num > 1:
+    for i in range(2,num):
+      if num%i ==0:
+        break
+    else:
+     primenum.append(num)
+        
+  
+      
+print("primenumbers:",primenum)
+ 
+ #/////////////////////////////////////////////////////////////
+
+#happy numbers
+l2 = [10,501,22,37,100,999,87,351]
+
+
+for n in l2:
+  num=n
+  while num !=4 and num !=1: #num is should not 1 and 4 always
+    total=0 #declaring
+    for digit in str(num): #consider each digit as a string 
+      total=total+int(digit)**2 #multiplying
+      num=total
+
+    if num==1:
+       print("print happy numbers: ",n) #output
+#///////////////////////////////////////////////////
+
+
+#sum of first and last digit number
+
+number=input("enter the number: ") #user input
+x=int(number[0]) #1 st in zero index
+y=int(number[-1]) #last digit in -1 index
+result=x+y #sum
+print("sum of first and last digits: ",result) #out put
+#//////////////////////////////////////////////////////////////////////
+# python code for to make 10 rs using 1 rs,2 rs,5 rs and 10 rs coins
+
+
+amount = 10
+
+for i1 in range(0,11):   # 10 coins for 1rs
+    for i2 in range(0,6):   # 5 coins for 2rs
+        for i3 in range(0,3):   # 2 coins for 5rs
+            for i4 in range(0,2):   # 1 coin for 10rs
+                
+                total = i1*1 + i2*2 + i3*5 + i4*10
+
+                if total == amount:
+                    print("1rs:", i1, "2rs:", i2, "5rs:", i3, "10rs:", i4)
+
+#//////////////////////////////////////////////////////////////////////
+#remove duplicates in list
+l1=[1,2,3,4]
+l2=[1,4,6,8]
+l3=[1,6,9,12] # declaring list
+
+#converts list to sets
+s1=set(l1)
+s2=set(l2)
+s3=set(l3)
+
+duplicates=s1.intersection(s2,s3) #intersecion method to find duplicates
+print("duplicates in lists:" ,duplicates)
+#////////////////////////////////////////////////////////////////////
+# non repetive integers
+nums = [2, 3, 4, 2, 3, 5, 6, 4]
+
+# Step 1: count frequency
+count = {}
+
+for n in nums:
+    if n in count:
+        count[n] += 1
+    else:
+        count[n] = 1
+
+# Step 2: find first non-repeating
+for n in nums:
+    if count[n] == 1:
+        print("First non-repeating element:", n)
+        break
+#///////////////////////////////////////////////////////////////////////////////////
+    
+#miminum number in sorted list
+
+l1=[[1,2,3],[2,4,6],[7,2,1]]
+
+minimum=l1[0][0]
+for sublist in l1:
+   for n in sublist:
+      if n<minimum:
+         minimum=n
+
+print("print minimum element:",minimum)
+         
+ 
+
+
