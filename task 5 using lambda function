@@ -1,0 +1,62 @@
+#filter with lamda and map functions
+people=[{"name":"ravi","age":21},{"name":"rekha","age":17},{"name":"swathi","age":18}]#list keys with name and age
+under_18=list(filter (lambda x:x ["age"] <18,people))#use list to fliter and lamda function to compare age
+above_18=list(filter (lambda x:x["age"]>=18,people))#use list to fliter and lamda function to compare age
+print(under_18)#just check 
+print(above_18)#just to check
+under18_list=list(map(lambda x:(x["name"],x["age"]),under_18))#map function mapping with and age
+above18_list=list(map(lambda x:(x["name"],x["age"]),above_18))#map function mapping with and age
+print("under 18:",under18_list)
+print("above 18:",above18_list)
+
+#multiplying using reduce and lambda function
+from functools import reduce #we can not use reduce directly so we import that from functools module
+numbers=[1,2,3,4,5,6]#declaring list
+product = reduce(lambda a, b: a * b, numbers)#product by using reduce and lamda
+print(product)
+
+#create list using comprehensive and square of even numbers by using lambda 
+
+num1=[1,3,5,9,7,2,6]
+sqaure=[n*n for n in num1]#using comprehensive
+print(sqaure)
+even_c=[n for n in sqaure if n%2 ==0]#using comprensive
+print(even_c)
+
+#using lambda
+num2=[2,3,4,6,8,9]
+sqaure=[n*n for n in num2]#using comprehensive
+print (sqaure)
+even_1=list(filter(lambda x:x%2==0,sqaure))#using  lambda
+print(even_1)
+
+#using lamda function to find number is interger or not
+is_number=lambda s:s.isdigit() #lamda function to check is it integr
+
+text=("enter value: ") #enter value by user choice
+
+if is_number(text):
+ print("its a integer")
+else:
+ print("it is not int")
+
+
+#exctract date, year and time from datetime object
+#importing datetime class
+from datetime import datetime
+#current datetime function
+dt=datetime.now()
+#exctrating using lamda function
+get_ydt=lambda d:(d.year,d.month,d.day)
+print(get_ydt(dt))
+
+
+
+#using lambda function to create fibionacci series upto n
+fib=lambda n:(lambda f:[f(f,i)for i  in range(n)])( lambda f,x: x if x<=1 else f(f,x-1)+f(f,x-2))
+print(fib(19))
+
+#fib=lambda n:... indicates n th time
+#for i in range(n) indicates range of fibionacci nimber
+
+
